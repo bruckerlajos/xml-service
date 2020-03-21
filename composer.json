@@ -1,0 +1,41 @@
+{
+    "name": "bruckerlajos/xml-service",
+    "description": "Easy xml reader and writer",
+    "type": "library",
+    "keywords": ["php", "xml", "reader", "writer"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lajos Daniel Brucker",
+            "email": "bruckerlajos@gmail.com"
+        }
+    ],
+    "autoload": {
+        "Brucker\\XmlService\\": "src/"
+    },
+    "autoload-dev": {
+        "Brucker\\XmlService\\Test\\": "tests/"
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "phpmd/phpmd": "^2.8",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpstan/phpstan": "^0.12.17"
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test",
+            "@phpmd"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage-ci": "phpunit --coverage-text --colors=never",
+        "phpmd": "phpmd src/ text phpmd.xml",
+        "phpstan": "phpstan analyse"
+    }
+}
